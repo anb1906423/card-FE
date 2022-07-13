@@ -5,6 +5,7 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <meta
       name="description"
       content="Web site created using create-react-app"
@@ -29,6 +30,105 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      $(document).ready(function () {
+        $('body').addClass('loaded');
+        // $('.form-container:nth-child(2), .form-container:nth-child(3), .form-container:nth-child(4), .form-container:nth-child(5)').addClass('none');
+        cardItemFocused();
+        valueItemFocused();
+        disableBtn();
+        showEyes();
+        // showPassword();
+        // hiddenPassword();
+        // addFormAction()
+        hideAndShowFormContainer()
+      });
+
+      function cardItemFocused() {
+        $('.card-item').click(function () {
+          $('.card-item').removeClass('card-item-active');
+          $(this).addClass('card-item-active');
+        })
+      }
+
+      function valueItemFocused() {
+        $('.value-item').click(function () {
+          $('.value-item').removeClass('value-item-active');
+          $(this).addClass('value-item-active');
+        })
+      }
+
+      function disableBtn() {
+        setInterval(() => {
+          var userNameValue = $('#username').val();
+          var pwdValue = $('#password').val();
+          var emailValue = $('#email').val();
+          if (emailValue !== '' && userNameValue !== '' && pwdValue !== '') {
+              $('.submit-btn').css('backgroundColor', '#FF7043');
+              $('.submit-btn').removeAttr('disabled');
+          } else {
+              $('.submit-btn').css('backgroundColor', '#BCAAA4');
+              $('.submit-btn').attr('disabled', 'disabled');
+          }
+        }, 0);
+      }
+
+      function showEyes() {
+        setInterval(function () {
+          if ($('#password').val() !== '') {
+            $('.FaEye').removeClass('none');
+          } else $('.FaEye').addClass('none');
+        }, 0);
+      }
+
+      function showPassword() {
+          $('.FaEye').click(function () {
+              $('#password').attr('type', 'text');
+              $(this).toggleClass('none');
+              $('.FaEyeSlash').toggleClass('none');
+          });
+  
+      }
+        
+      function hiddenPassword() {
+        $('.FaEyeSlash').click(function () {
+            $('#password').attr('type', 'password');
+            $(this).toggleClass('none');
+            $('.FaEye').toggleClass('none');
+        });
+      }
+
+      function hideAndShowFormContainer() {
+        var clickPoint = 0; 
+        $('.add-form').click(function(){
+          clickPoint = clickPoint + 1;
+          if (clickPoint === 1) {
+            $('.form-delete:nth-child(2)').removeClass('none');
+          } else if (clickPoint === 2) {
+            $('.form-delete:nth-child(3)').removeClass('none');
+          } else if (clickPoint === 3) {
+            $('.form-delete:nth-child(4)').removeClass('none');
+          } else if (clickPoint === 4) {
+            $('.form-delete:nth-child(5)').removeClass('none');
+          } else {
+            clickPoint = 4;
+            alert('Chỉ hỗ trợ tối đa 5 thẻ trên 1 lần đổi!!');
+          }
+        });
+        $('.remove-form').click(function(){
+          clickPoint = clickPoint - 1;
+          if (clickPoint === 0) {
+            $('.form-delete:nth-child(2)').addClass('none');
+          } else if (clickPoint === 1) {
+            $('.form-delete:nth-child(3)').addClass('none');
+          } else if (clickPoint === 2) {
+            $('.form-delete:nth-child(4)').addClass('none');
+          } else if (clickPoint === 3) {
+            $('.form-delete:nth-child(5)').addClass('none');
+          }
+        });
+      }
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -39,5 +139,8 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script src="https://fb.me/react-15.1.0.js"></script>
+    <script src="https://fb.me/react-dom-15.1.0.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   </body>
 </html>

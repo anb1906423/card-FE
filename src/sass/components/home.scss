@@ -1,0 +1,94 @@
+@import '../variables';
+
+#home {
+    margin: 0;
+}
+
+// .type-card-list {
+    
+// }
+
+.type-card-list .card-item {
+    list-style-type: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: 12px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 #ccc;
+}
+
+.card-item-active {
+    border: 1px solid $main-color !important;
+    box-shadow: 0 2px 4px 0 $main-color !important;
+    transition: all .1s linear;
+}
+
+.type-card-list .card-item img {
+    max-width: 100px;
+    margin: 0 24px;
+    pointer-events: none;
+}
+
+#home .sub-heading {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+// .value-list {
+
+// }
+
+.value-item {
+    list-style-type: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 100px;
+    // width: 60px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: 12px;
+    padding: 16px 12px;
+    cursor: pointer;
+    color: $black;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 #ccc;
+}
+
+.value-item-active {
+    border: 1px solid $main-color;
+    color: $main-color;
+    box-shadow: 0 2px 4px 0 $main-color;
+    transition: all .1s linear;
+}
+
+.price-sale {
+    font-size: 14px;
+    position: relative;
+}
+
+.price-sale::before {
+    content: "";
+    width: 80%;
+    height: 1px;
+    background-color: #FFAB91;
+    top: -6px;
+    transform: translateX(-50%);
+    left: 50%;
+    border-radius: 4px;
+    position: absolute;
+}
+
+.price-sale p {
+    display: inline-block;
+    float: left;
+}
+
+.price-sale span {
+    float: right;
+}

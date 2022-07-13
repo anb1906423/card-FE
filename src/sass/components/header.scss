@@ -1,0 +1,138 @@
+@import '../variables';
+
+
+.wp-header {
+    max-width: 100%;
+    background-color: $bg-header;
+    box-shadow: 0 1px 2px 0 rgba(128, 128, 128, 0.55);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header {
+    width: 100%;
+    max-width: 1120px;
+    height: $height-header;
+    background-color: $bg-header;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+.header div {
+    display: inline-block;
+}
+
+.header-logo {
+    height: 100%;
+}
+
+.header .logo {
+    max-height: $height-header;
+    height: 100%;
+}
+
+.nav-item.nav-left-item {
+    line-height: $height-header;
+    position: relative;
+    transition: all 0.4 ease;
+}
+
+.nav-item.nav-left-item:hover {
+    background-color: $sub-color;
+}
+
+.nav-item.nav-left-item:hover::after {
+    display: block;
+}
+
+.nav-item.nav-left-item:hover::before {
+    display: block;
+}
+
+.nav-item a {
+    color: $text-color-header;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0 16px;
+    font-size: 13px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    line-height: $height-header;
+    display: block;
+}
+
+.nav-item.nav-left-item::before {
+    content: '';
+    width: 50%;
+    height: 2px;
+    background-color: $main-color;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: none;
+    animation: navItemHover 0.4s ease;
+    border-radius: 0 4px 0 0;
+}
+
+.nav-item.nav-left-item::after {
+    content: '';
+    width: 50%;
+    height: 2px;
+    background-color: $main-color;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    display: none;
+    animation: navItemHover 0.4s ease;
+    border-radius: 4px 0 0 0;
+}
+
+.right-nav-header {
+    position: absolute;
+    right: 0;
+}
+
+.nav-item.nav-right-item {
+    border-radius: 4px;
+    margin-left: 6px;
+}
+
+.nav-item.nav-right-item:hover {
+    opacity: .9;
+    span, span:first-child {
+        color: #fff;
+    }
+}
+
+.nav-item.nav-right-item:first-child {
+    background-color: #FFAB91;
+}
+
+.nav-item.nav-right-item:last-child {
+    background-color: #CFD8DC;
+}
+
+.nav-item.nav-right-item span:first-child {
+    padding: 0 6px 0 0;
+    color: #000;
+    font-size: 13px;
+}
+
+.right-nav-header a {
+    line-height: 36px;
+}
+
+@keyframes navItemHover {
+    from {
+        width: 0;
+    } to {
+        width: 50%;
+    }
+}

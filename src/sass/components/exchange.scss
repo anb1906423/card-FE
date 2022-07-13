@@ -1,0 +1,144 @@
+@import '../variables';
+
+.form-exchange {
+    max-width: 100%;
+    margin: 32px 0;
+    .row {
+        margin: 0;
+    }
+
+    .form-container {
+        margin: 20px 0;
+    }
+    
+    input, button {
+        padding: 6px 15px;
+        line-height: 16px;
+        border: 1px solid $black;
+        border-radius: 2px;
+    }
+
+    select:focus, input:focus {
+        outline: 2px solid $main-color;
+        border: 1px solid rgba(0, 0, 0, 0);
+    }
+
+    select {
+        padding: 6px 15px;
+        border: 1px solid $black;
+        border-radius: 2px;
+    }
+
+    .form-container:first-child .interact-form {
+        font-size: 14px;
+        background-color: #00E676;
+        border: 2px solid $black;
+        border-radius: 2px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        transition: all .3s ease;
+        z-index: 1;
+    }
+
+    .interact-form {
+        font-size: 14px;
+        background-color: #EF5350;
+        border: 2px solid $black;
+        border-radius: 2px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        transition: all .3s ease;
+        z-index: 1;
+    }
+
+    .interact-form::after {
+        content: "";
+        width: 0;
+        height: 100%;
+        right: 0;
+        top: 0;
+        z-index: -1;
+        background-color: #fff;
+        transition: all .2s ease;
+        position: absolute;
+    }
+
+    .interact-form:hover::after {
+        left: 0;
+        width: 100%;
+    }
+
+    .submit-exchange-wp {
+        margin: 16px;
+        padding: 4px;
+        .submit-exchange-btn {
+            margin: 0 auto;
+            position: relative;
+            color: $black;
+            font-weight: bold;
+            background-color: $main-color;
+            border-radius: 5px;
+            padding: 8px 0;
+            cursor: pointer;
+            position: relative;
+            box-shadow:inset 2px 2px 2px 0px $main-color, 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+            outline: none;
+            transition: all .3s ease;
+            z-index: 1;
+        }
+
+        .submit-exchange-btn::after {
+            content: "";
+            width: 0;
+            height: 100%;
+            right: 0;
+            top: 0;
+            z-index: -1;
+            background-color: #fff;
+            border-radius: 5px;
+            transition: all .2s ease;
+            position: absolute;
+        }
+
+        .submit-exchange-btn:hover::after {
+            left: 0;
+            width: 100%;
+        }
+    }
+}
+
+.table-wp {
+    margin: 0;
+
+    .table {
+        margin: 8px 0;
+
+        thead tr:first-child {
+            background-color: #BDBDBD;
+        }
+
+        thead tr:last-child {
+            background-color: #CFD8DC;
+        }
+
+        .table-heading {
+            font-size: 17px;
+        }
+
+        th {
+            padding: 6px;
+        }
+    
+        td {
+            padding: 6px;
+            border: 1px solid #ccc;
+        }
+    }
+
+}

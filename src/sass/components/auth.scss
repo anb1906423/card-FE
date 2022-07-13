@@ -1,0 +1,105 @@
+@import "../variables";
+
+// #login {
+// }
+
+#register,
+#login {
+    margin: 0 auto;
+}
+
+.form-wp {
+    max-width: 400px;
+    margin: 4px auto;
+
+    label {
+        display: block;
+        padding: 12px 0px 8px;
+    }
+    
+    input {
+        width: 100%;
+        padding: 8px 16px;
+    }
+    
+    input:focus {
+        outline: 2px solid $main-color;
+        border: 2px solid rgba(0, 0, 0, 0);
+        border-radius: 2px;
+    }
+
+    .pwd-wp {
+        position: relative;
+    }
+
+    .FaEye {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) translateX(-160%);
+    }
+    
+    .FaEyeSlash {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) translateX(-160%);
+    }
+
+    .btn {
+        width: 100%;
+        padding: 8px;
+        margin-top: 24px;
+        font-size: 16px;
+        border-radius: 4px;
+        transition: all 0.2s ease-in;
+        cursor: pointer;
+    }
+
+    .have-account {
+        text-align: center;
+        margin: 16px 0px -12px;
+    }
+
+    .submit-btn {
+        background-color: #BCAAA4;
+        color: #fff;
+        border: 1px solid #ccc;
+        position: relative;
+        transition: all .3s ease;
+        z-index: 1;
+        box-shadow:inset 0 0 0 0px #BCAAA4, 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    }
+
+    .sub-btn {
+        background-color: $main-color;
+        color: #fff;
+        border: 1px solid $main-color;
+        position: relative;
+        transition: all .3s ease;
+        z-index: 1;
+        box-shadow:inset 2px 2px 2px 0px $main-color, 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    }
+
+    .sub-btn:hover {
+        color: $black;
+    }
+
+    .sub-btn::after {
+        content: "";
+        width: 0;
+        height: 100%;
+        right: 0;
+        top: 0;
+        z-index: -1;
+        background-color: #fff;
+        transition: all .2s ease;
+        position: absolute;
+    }
+
+    .sub-btn:hover::after {
+        left: 0;
+        width: 100%;
+    }
+}
+
+
+
